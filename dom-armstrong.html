@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong</title>
+</head>
+<body>
+	<input type="number" id="inp" placeholder="Enter a number">
+	<h2 id="res"></h2>
+	<button type="button" id="btn">Click me</button>
+
+<script>
+	var but=document.getElementById("btn");
+	
+	but.addEventListener("click",armFun);
+	
+	function armFun(){
+
+	var a=document.getElementById("inp").value;
+	var sum=0;
+	var ans=a;
+	var ls=ans;
+	var count=0;
+		while(a>0){
+			var c =a%10;
+				a=(a-c)/10;
+				count++;
+		}
+		
+		while(ans>0){
+			var e=ans%10;
+			var b=e**count;	
+			 ans=(ans-e)/10;
+			 sum +=b;
+		}
+		if(ls==sum){
+			document.getElementById("res").innerHTML= ls + "Armstrong";
+		}
+		else{
+			document.getElementById("res").innerHTML= ls + " Not Armstrong";
+		}
+	}
+</script>
+
+</body>
+</html>
